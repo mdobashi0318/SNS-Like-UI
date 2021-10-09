@@ -11,7 +11,7 @@ import SwiftUI
 struct SNS_Like_UIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BasetView()
         }
     }
 }
