@@ -21,6 +21,7 @@ struct HomeListRow: View {
                     Text(model.id)
                 }
                 Text(model.detail)
+                    .lineLimit(5)
             }
         }
     }
