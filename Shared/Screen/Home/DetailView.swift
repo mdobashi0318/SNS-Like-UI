@@ -43,6 +43,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(model: HomeModel(id: "id1", name: "name1", detail: "detail1"))
+        DetailView(model: HomeModel().fetch()[0])
     }
 }

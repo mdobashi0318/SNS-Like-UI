@@ -29,8 +29,9 @@ struct HomeListRow: View {
 
 
 struct HomeListRow_Previews: PreviewProvider {
+    
     static var previews: some View {
-        HomeListRow(model:HomeModel(id: "0", name: "name1", detail: "detail1"))
+        HomeListRow(model: HomeModel().fetch()[0])
             .previewLayout(.fixed(width: 300, height: 50))
     }
 }

@@ -10,11 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
         
-    let model: [HomeModel] = [HomeModel(id: "id1", name: "name1", detail: "detail1"),
-                              HomeModel(id: "id2", name: "name2", detail: "detail2,長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト"),
-                              HomeModel(id: "id3", name: "name3", detail: "detail3"),
-                              HomeModel(id: "id4", name: "name4", detail: "detail4")
-    ]
+    let model: [HomeModel] = HomeModel().fetch()
     
     var body: some View {
         List {
