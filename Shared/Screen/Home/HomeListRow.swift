@@ -13,8 +13,11 @@ struct HomeListRow: View {
     var model: HomeModel
     
     var body: some View {
-        HStack() {
+        HStack(alignment: .top) {
             Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 30, height: 30)
+                
             VStack(alignment: .leading) {
                 HStack {
                     Text(model.name)

@@ -28,6 +28,8 @@ struct DetailView: View {
     var nameHStak: some View {
         HStack {
             Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 30, height: 30)
             VStack(alignment: .leading) {
                 Text(model.name)
                 Text(model.id)
