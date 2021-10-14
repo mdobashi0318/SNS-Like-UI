@@ -10,13 +10,13 @@ import SwiftUI
 
 extension View {
     
-    var height: CGFloat {
+    var screenHeight: CGFloat {
         get {
             return UIScreen.main.bounds.height
         }
     }
     
-    var width: CGFloat {
+    var screenWidth: CGFloat {
         get {
             return UIScreen.main.bounds.width
         }

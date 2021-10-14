@@ -21,7 +21,7 @@ struct DetailView: View {
                 detail
             }
         }
-        .frame(width: width / 1.1, alignment: .leading)
+        .frame(width: screenWidth / 1.1, alignment: .leading)
         
     }
     

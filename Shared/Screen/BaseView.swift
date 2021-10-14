@@ -8,33 +8,47 @@
 import SwiftUI
 
 struct BasetView: View {
+    
+    @State var isOpenSideMenu = false
+    
     var body: some View {
         NavigationView {
             ZStack {
-                TabView {
-                    HomeView()
-                        .tabItem {
-                            Image(systemName: "house")
-                        }
-                    Text("tab2")
-                        .tabItem {
-                            Image(systemName: "magnifyingglass")
-                            
-                        }
-                    Text("tab3")
-                        .tabItem {
-                            Image(systemName: "bell")
-                        }
-                    Text("tab4")
-                        .tabItem {
-                            Image(systemName: "envelope")
-                        }
-                }
+                setTabView
                 addButton
+                SideMenuView(isOpen: $isOpenSideMenu, width: 270)
+                    .edgesIgnoringSafeArea(.all)
             }
+            .navigationBarItems(leading: Button(action: {
+                self.isOpenSideMenu.toggle()
+            }) {
+                Image(systemName: "line.3.horizontal")
+            })
         }
     }
     
+    
+    private var setTabView: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                }
+            Text("tab2")
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    
+                }
+            Text("tab3")
+                .tabItem {
+                    Image(systemName: "bell")
+                }
+            Text("tab4")
+                .tabItem {
+                    Image(systemName: "envelope")
+                }
+        }
+    }
     
     private var addButton: some View {
         Button(action: {
@@ -55,3 +69,7 @@ struct BasetView_Previews: PreviewProvider {
         BasetView()
     }
 }
+
+
+
+
