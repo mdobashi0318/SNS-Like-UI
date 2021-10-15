@@ -24,19 +24,14 @@ struct SideMenuRow: View {
 
     var body: some View {
         HStack {
-            Button(action: {
-                print("TAP \(text)")
-            }) {
-                Image(systemName: systemName)
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                    .frame(width: 32.0)
-                Text(text)
-                    .foregroundColor(.gray)
-                    .font(.headline)
-                Spacer()
-            }
-            
+            Image(systemName: systemName)
+                .foregroundColor(.gray)
+                .imageScale(.large)
+                .frame(width: 32.0)
+            Text(text)
+                .foregroundColor(.gray)
+                .font(.headline)
+            Spacer()
         }
         .padding(.top, topPadding)
         .padding(.leading, 32)

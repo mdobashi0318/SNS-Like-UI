@@ -22,9 +22,30 @@ struct SideMenuView: View {
         ZStack {
             HStack {
                 VStack() {
-                    SideMenuRow(topPadding: 125, systemName: "person", text: "Profile")
-                    SideMenuRow(systemName: "bookmark", text: "Bookmark")
-                    SideMenuRow(systemName: "gear", text: "Setting")
+                    NavigationLink(destination: {
+                        ProfileView(model: ProfileModel().fetch())
+                            .onAppear {
+                                isOpen = false
+                            }
+                    }){
+                        SideMenuRow(topPadding: 125, systemName: "person", text: "Profile")
+                    }
+                    NavigationLink(destination: {
+                        Text("SidePage2")
+                            .onAppear {
+                                isOpen = false
+                            }
+                    }){
+                        SideMenuRow(systemName: "bookmark", text: "Bookmark")
+                    }
+                    NavigationLink(destination: {
+                        Text("SidePage3")
+                            .onAppear {
+                                isOpen = false
+                            }
+                    }){
+                        SideMenuRow(systemName: "gear", text: "Setting")
+                    }
                     Spacer()
                 }
                 .frame(width: self.width)
