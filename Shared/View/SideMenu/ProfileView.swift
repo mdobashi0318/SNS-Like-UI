@@ -19,7 +19,7 @@ struct ProfileView: View {
                     Image(systemName: "person.circle")
                         .resizable()
                         .frame(width: 50, height: 50)
-                        .padding(.leading)
+                        .padding([.leading, .top])
                     Text(model.name)
                         .font(.headline)
                         .padding(.leading)
@@ -28,14 +28,13 @@ struct ProfileView: View {
                         .padding(.leading)
                 }
                 Spacer()
-        }
+            }
+            .edgesIgnoringSafeArea(.top)
     }
     
     
     var coverView: some View {
         HStack{}
-        .offset(x: 0, y: 0)
-        .edgesIgnoringSafeArea(.top)
         .frame(width: screenWidth, height: 100)
         .background(Color.blue)
     }
