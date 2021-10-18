@@ -11,6 +11,8 @@ struct BasetView: View {
     
     @State var isOpenSideMenu = false
     
+    @State var isShowModle = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,6 +26,9 @@ struct BasetView: View {
             }) {
                 Image(systemName: "line.3.horizontal")
             })
+        }
+        .fullScreenCover(isPresented: $isShowModle) {
+            InputChatView()
         }
     }
     
@@ -52,7 +57,7 @@ struct BasetView: View {
     
     private var addButton: some View {
         Button(action: {
-            print("Tap!")
+            isShowModle.toggle()
         }, label: {
             Image(systemName: "plus")
                 .frame(width: 50, height: 50)
