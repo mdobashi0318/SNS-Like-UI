@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
         
-    let model: [HomeModel] = HomeModel().fetch()
+    let model: [ChatModel] = ProfileModel().fetch().chat
     
     var body: some View {
         List {

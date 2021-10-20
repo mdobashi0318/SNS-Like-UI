@@ -12,6 +12,8 @@ class ProfileModel: Codable {
     var id: String = ""
     var name: String = ""
     var bio: String = ""
+    var chat: [ChatModel] = []
+    var follow: [String] = []
     
     
     func fetch() -> ProfileModel {
@@ -24,7 +26,10 @@ class ProfileModel: Codable {
             }
             
             do {
-                return try JSONDecoder().decode(ProfileModel.self, from: data)
+                let prof = try JSONDecoder().decode(ProfileModel.self, from: data)
+                prof.follow.append(prof.id)
+                prof.chat = ChatModel().fetch(ids: prof.follow)
+                return prof
             }
             catch {
                 fatalError("Couldn't parse file as \(ProfileModel.self):\n\(error)")

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct DetailView: View {
         
-    let model: HomeModel
+    let model: ChatModel
     
     var body: some View {
         ScrollView {
@@ -45,6 +45,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(model: HomeModel().fetch()[0])
+        DetailView(model: ProfileModel().fetch().chat[0])
     }
 }

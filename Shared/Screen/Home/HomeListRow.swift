@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeListRow: View {
     
-    var model: HomeModel
+    var model: ChatModel
     
     var body: some View {
         HStack(alignment: .top) {
@@ -34,7 +34,7 @@ struct HomeListRow: View {
 struct HomeListRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        HomeListRow(model: HomeModel().fetch()[0])
+        HomeListRow(model: ProfileModel().fetch().chat[0])
             .previewLayout(.fixed(width: 300, height: 50))
     }
 }
