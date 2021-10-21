@@ -13,23 +13,32 @@ struct ProfileView: View {
     var model: ProfileModel
     
     var body: some View {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    coverView
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .padding([.leading, .top])
-                    Text(model.name)
-                        .font(.headline)
-                        .padding(.leading)
-                    Text(model.id)
-                        .font(.subheadline)
-                        .padding(.leading)
+        ScrollView {
+            VStack(alignment: .leading) {
+                coverView
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .padding([.leading, .top])
+                Text(model.name)
+                    .font(.headline)
+                    .padding(.leading)
+                Text(model.id)
+                    .font(.subheadline)
+                    .padding(.leading)
+                
+                ForEach(0..<model.chat.count) { row in
+                    NavigationLink(destination: {
+                        DetailView(model: model.chat[row])
+                    }) {
+                        HomeListRow(model: model.chat[row])
+                            .padding(.leading)
+                    }
                 }
-                Spacer()
             }
-            .edgesIgnoringSafeArea(.top)
+            Spacer()
+        }
+        .edgesIgnoringSafeArea(.top)
     }
     
     

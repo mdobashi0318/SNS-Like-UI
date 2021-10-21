@@ -15,6 +15,8 @@ struct SideMenuView: View {
     /// スワイプ等で変化したサイドメニューの長さ
     @State var width: CGFloat
     
+    @ObservedObject var viewModel: ProfileViewModel
+    
     /// サイドメニューの長さの定数
     let sideWidth: CGFloat = 270
     
@@ -23,7 +25,7 @@ struct SideMenuView: View {
             HStack {
                 VStack() {
                     NavigationLink(destination: {
-                        ProfileView(model: ProfileModel().fetch())
+                        ProfileView(model: viewModel.model)
                             .onAppear {
                                 isOpen = false
                             }

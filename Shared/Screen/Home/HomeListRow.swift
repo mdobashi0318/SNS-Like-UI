@@ -21,10 +21,13 @@ struct HomeListRow: View {
             VStack(alignment: .leading) {
                 HStack {
                     Text(model.name)
+                        .foregroundColor(Color(UIColor.textColor))
                     Text(model.id)
+                        .foregroundColor(Color(UIColor.textColor))
                 }
                 Text(model.detail)
                     .lineLimit(5)
+                    .foregroundColor(Color(UIColor.textColor))
             }
         }
     }

@@ -17,25 +17,27 @@ struct InputChatView: View {
     
     var body: some View {
         NavigationView {
-            TextField("テキストを入力してください", text: $text)
-                .padding()
-                .navigationBarItems(leading: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancel")
-                }, trailing: Button(action: {
-                    if profile.addChat(detail: text) {
+            ScrollView {
+                TextField("テキストを入力してください", text: $text)
+                    .padding()
+                    .navigationBarItems(leading: Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
-                    } else {
-                        /// アラートを出す
-                    }
-                }) {
-                    Text("Add")
-                        .frame(width: 60, height: 30)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(50 / 2)
-                })
+                    }) {
+                        Text("Cancel")
+                    }, trailing: Button(action: {
+                        if profile.addChat(detail: text) {
+                            self.presentationMode.wrappedValue.dismiss()
+                        } else {
+                            /// アラートを出す
+                        }
+                    }) {
+                        Text("Add")
+                            .frame(width: 60, height: 30)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(50 / 2)
+                    })
+            }
         }
         
     }

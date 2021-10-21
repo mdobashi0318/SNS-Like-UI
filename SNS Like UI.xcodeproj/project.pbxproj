@@ -27,6 +27,7 @@
 		6DA26AB7271996CC004FBEF8 /* Profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DA26AB6271996BE004FBEF8 /* Profile.json */; };
 		6DA26AB927199973004FBEF8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA26AB827199973004FBEF8 /* ProfileView.swift */; };
 		6DF6D72E2721B47E00D69907 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6D72D2721B47E00D69907 /* ProfileViewModel.swift */; };
+		6DF6D7322721E38B00D69907 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6D7312721E38B00D69907 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		6DA26AB6271996BE004FBEF8 /* Profile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profile.json; sourceTree = "<group>"; };
 		6DA26AB827199973004FBEF8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6DF6D72D2721B47E00D69907 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		6DF6D7312721E38B00D69907 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				6D5EC56427132C7300D38EC7 /* View+.swift */,
+				6DF6D7312721E38B00D69907 /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				6DF6D72E2721B47E00D69907 /* ProfileViewModel.swift in Sources */,
 				6D2DE7AC2720598900C9DA19 /* ChatModel.swift in Sources */,
 				6D032B9E2711A51B00A92283 /* SNS_Like_UIApp.swift in Sources */,
+				6DF6D7322721E38B00D69907 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

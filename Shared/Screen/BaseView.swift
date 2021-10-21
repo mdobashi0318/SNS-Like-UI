@@ -20,7 +20,7 @@ struct BasetView: View {
             ZStack {
                 setTabView
                 addButton
-                SideMenuView(isOpen: $isOpenSideMenu, width: 270)
+                SideMenuView(isOpen: $isOpenSideMenu, width: 270, viewModel: viewModel)
                     .edgesIgnoringSafeArea(.all)
             }
             .navigationBarItems(leading: Button(action: {
