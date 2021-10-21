@@ -10,18 +10,17 @@ import SwiftUI
 
 struct HomeView: View {
         
-    let model: [ChatModel] = ProfileModel().fetch().chat
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         List {
-            ForEach(0..<model.count) { row in
+            ForEach(0..<viewModel.model.chat.count, id: \.self) { row in
                 NavigationLink(destination: {
-                    DetailView(model: model[row])
+                    DetailView(model: viewModel.model.chat[row])
                 }) {
-                    HomeListRow(model: model[row])
+                    HomeListRow(model: viewModel.model.chat[row])
                 }
             }
-            
         }
     }
 }
@@ -29,6 +28,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: ProfileViewModel())
     }
 }

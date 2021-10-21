@@ -13,6 +13,8 @@ struct BasetView: View {
     
     @State var isShowModle = false
     
+    @ObservedObject var viewModel: ProfileViewModel = ProfileViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -28,14 +30,14 @@ struct BasetView: View {
             })
         }
         .fullScreenCover(isPresented: $isShowModle) {
-            InputChatView()
+            InputChatView(profile: viewModel)
         }
     }
     
     
     private var setTabView: some View {
         TabView {
-            HomeView()
+            HomeView(viewModel: viewModel)
                 .tabItem {
                     Image(systemName: "house")
                 }

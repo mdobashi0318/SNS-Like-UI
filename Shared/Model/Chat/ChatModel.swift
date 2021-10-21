@@ -13,6 +13,14 @@ class ChatModel: Codable {
     var detail: String = ""
     
     
+    init() {}
+    
+    init(id: String, name: String, detail: String) {
+        self.id = id
+        self.name = name
+        self.detail = detail
+    }
+    
     
     func fetch(ids: [String]) -> [ChatModel] {
         guard let url = Bundle.main.url(forResource: "Chat", withExtension: "json") else {

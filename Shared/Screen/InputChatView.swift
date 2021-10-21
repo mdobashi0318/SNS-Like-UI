@@ -13,6 +13,8 @@ struct InputChatView: View {
     
     @State var text: String = ""
     
+    @ObservedObject var profile: ProfileViewModel
+    
     var body: some View {
         NavigationView {
             TextField("テキストを入力してください", text: $text)
@@ -22,8 +24,11 @@ struct InputChatView: View {
                 }) {
                     Text("Cancel")
                 }, trailing: Button(action: {
-                    print("text:\(text)")
-                    self.presentationMode.wrappedValue.dismiss()
+                    if profile.addChat(detail: text) {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } else {
+                        /// アラートを出す
+                    }
                 }) {
                     Text("Add")
                         .frame(width: 60, height: 30)
@@ -40,6 +45,6 @@ struct InputChatView: View {
 
 struct InputChatView_Previews: PreviewProvider {
     static var previews: some View {
-        InputChatView()
+        InputChatView(profile: ProfileViewModel())
     }
 }
