@@ -18,7 +18,11 @@ struct InputChatView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                TextField("テキストを入力してください", text: $viewModel.text)
+                Text("テキストを入力してください")
+                    .frame(width: screenWidth / 1.1, height: 30, alignment: .leading)
+                    .padding([.leading, .trailing])
+                TextView(text: $viewModel.text)
+                    .frame(width: screenWidth / 1.1, height: screenHeight, alignment: .leading)
                     .padding()
                     .navigationBarItems(leading: cancelButton,
                                         trailing: addButton
