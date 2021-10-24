@@ -11,35 +11,45 @@ struct InputChatView: View {
     
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
     
-    @State var text: String = ""
-    
     @ObservedObject var profile: ProfileViewModel
+    
+    @ObservedObject var viewModel: InputChatViewModel = InputChatViewModel()
     
     var body: some View {
         NavigationView {
             ScrollView {
-                TextField("テキストを入力してください", text: $text)
+                TextField("テキストを入力してください", text: $viewModel.text)
                     .padding()
-                    .navigationBarItems(leading: Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Cancel")
-                    }, trailing: Button(action: {
-                        if profile.addChat(detail: text) {
-                            self.presentationMode.wrappedValue.dismiss()
-                        } else {
-                            /// アラートを出す
-                        }
-                    }) {
-                        Text("Add")
-                            .frame(width: 60, height: 30)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(50 / 2)
-                    })
+                    .navigationBarItems(leading: cancelButton,
+                                        trailing: addButton
+                    )
             }
         }
-        
+    }
+    
+    
+    var addButton: some View {
+        Button(action: {
+            if profile.addChat(detail: viewModel.text) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }) {
+            Text("Add")
+                .frame(width: 60, height: 30)
+                .background(viewModel.isEnableAddButton ? Color(UIColor.darkGray) : Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(50 / 2)
+        }
+        .disabled(viewModel.isEnableAddButton)
+    }
+    
+    
+    var cancelButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Text("Cancel")
+        }
     }
 }
 
