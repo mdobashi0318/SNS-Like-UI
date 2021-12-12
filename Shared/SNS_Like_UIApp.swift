@@ -11,7 +11,11 @@ import SwiftUI
 struct SNS_Like_UIApp: App {
     var body: some Scene {
         WindowGroup {
-            BasetView()
+            if UserDefaults.standard.getBool(key: .auth) {
+                BasetView()
+            } else {
+                LoginTopView()
+            }
         }
     }
 }

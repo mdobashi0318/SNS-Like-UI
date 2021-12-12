@@ -33,20 +33,29 @@ struct SideMenuView: View {
                         SideMenuRow(topPadding: 125, systemName: "person", text: "Profile")
                     }
                     NavigationLink(destination: {
-                        Text("SidePage2")
-                            .onAppear {
-                                isOpen = false
-                            }
-                    }){
-                        SideMenuRow(systemName: "bookmark", text: "Bookmark")
-                    }
-                    NavigationLink(destination: {
                         Text("SidePage3")
                             .onAppear {
                                 isOpen = false
                             }
                     }){
                         SideMenuRow(systemName: "gear", text: "Setting")
+                    }
+                    NavigationLink(destination: {
+                        VStack(alignment: .center) {
+                            Text("ログアウトしてアプリを終了しますか？")
+                            Button(action: {
+                                UserDefaults.standard.setBool(key: .auth, value: false)
+                                exit(0)
+                            }) {
+                                Text("ログアウト")
+                                    .frame(width: 150, height: 50)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(50 / 2)
+                            }
+                        }
+                    }){
+                        SideMenuRow(systemName: "power", text: "ログアウト")
                     }
                     Spacer()
                 }
