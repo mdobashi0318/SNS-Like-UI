@@ -33,7 +33,7 @@ struct PWLoginView: View {
                 Spacer()
             }
             .fullScreenCover(isPresented: $viewModel.isAuth) {
-                BasetView()
+                BaseView()
             }
             .alert(isPresented: $viewModel.isAlert) {
                 Alert(title: Text("メールアドレスまたは、パスワードが違います"), dismissButton: .cancel(Text("閉じる")))

@@ -12,7 +12,7 @@ struct SNS_Like_UIApp: App {
     var body: some Scene {
         WindowGroup {
             if UserDefaults.standard.getBool(key: .auth) {
-                BasetView()
+                BaseView()
             } else {
                 LoginTopView()
             }

@@ -1,5 +1,5 @@
 //
-//  BasetView.swift
+//  BaseView.swift
 //  Shared
 //
 //  Created by 土橋正晴 on 2021/10/09.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BasetView: View {
+struct BaseView: View {
     
     @State var isOpenSideMenu = false
     
@@ -73,7 +73,7 @@ struct BasetView: View {
 
 struct BasetView_Previews: PreviewProvider {
     static var previews: some View {
-        BasetView()
+        BaseView()
     }
 }
 
