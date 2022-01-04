@@ -16,7 +16,6 @@
 		6D0E3CC727254FEE0037C29A /* InputChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0E3CC627254FEE0037C29A /* InputChatViewModel.swift */; };
 		6D0E3CCA27259C820037C29A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0E3CC927259C820037C29A /* TextView.swift */; };
 		6D132653271DB3B000852C5E /* InputChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D132652271DB3B000852C5E /* InputChatView.swift */; };
-		6D132654271DB3B000852C5E /* InputChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D132652271DB3B000852C5E /* InputChatView.swift */; };
 		6D2CAB2427186F82003524E0 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CAB2327186F82003524E0 /* SideMenuView.swift */; };
 		6D2CAB2727186FD4003524E0 /* SideMenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CAB2627186FD4003524E0 /* SideMenuRow.swift */; };
 		6D2DE7AC2720598900C9DA19 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE7AB2720598900C9DA19 /* ChatModel.swift */; };
@@ -131,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				6D2CAB2527186FC2003524E0 /* SideMenu */,
+				6DEF09F62784533A007A640F /* ProfileView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,7 +140,6 @@
 			children = (
 				6D2CAB2327186F82003524E0 /* SideMenuView.swift */,
 				6D2CAB2627186FD4003524E0 /* SideMenuRow.swift */,
-				6DA26AB827199973004FBEF8 /* ProfileView.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -159,9 +158,9 @@
 		6D7B223D2711B524008F0899 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				6D85664B272EC212000637AA /* Login */,
 				6D032B8F2711A51A00A92283 /* BaseView.swift */,
-				6D132652271DB3B000852C5E /* InputChatView.swift */,
+				6D85664B272EC212000637AA /* Login */,
+				6DEF09F52784530F007A640F /* InputChatView */,
 				6D7B223E2711B52D008F0899 /* Home */,
 			);
 			path = Screen;
@@ -205,11 +204,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6DEF09F52784530F007A640F /* InputChatView */ = {
+			isa = PBXGroup;
+			children = (
+				6D132652271DB3B000852C5E /* InputChatView.swift */,
+				6D0E3CC627254FEE0037C29A /* InputChatViewModel.swift */,
+			);
+			path = InputChatView;
+			sourceTree = "<group>";
+		};
+		6DEF09F62784533A007A640F /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				6DA26AB827199973004FBEF8 /* ProfileView.swift */,
+				6DF6D72D2721B47E00D69907 /* ProfileViewModel.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		6DF6D72F2721D6F900D69907 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				6DA26AB4271995FC004FBEF8 /* ProfileModel.swift */,
-				6DF6D72D2721B47E00D69907 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -218,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				6D2DE7AB2720598900C9DA19 /* ChatModel.swift */,
-				6D0E3CC627254FEE0037C29A /* InputChatViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -355,7 +370,6 @@
 				6D032B9F2711A51B00A92283 /* SNS_Like_UIApp.swift in Sources */,
 				6DF6AFBC2729AC8B00B58A68 /* UserDefaults+.swift in Sources */,
 				6DF6AFB92729AAC000B58A68 /* LoginTopView.swift in Sources */,
-				6D132654271DB3B000852C5E /* InputChatView.swift in Sources */,
 				6DF42F3C2764C97600A4EF56 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
