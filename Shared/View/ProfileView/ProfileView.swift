@@ -16,16 +16,7 @@ struct ProfileView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 coverView
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding([.leading, .top])
-                Text(model.name)
-                    .font(.headline)
-                    .padding(.leading)
-                Text(model.id)
-                    .font(.subheadline)
-                    .padding(.leading)
+                profileSection
                 
                 ForEach(0..<model.chat.count) { row in
                     NavigationLink(destination: {
@@ -42,11 +33,35 @@ struct ProfileView: View {
     }
     
     
-    var coverView: some View {
+    /// 画面上部のcover
+    private var coverView: some View {
         HStack{}
         .frame(width: screenWidth, height: 100)
         .background(Color.blue)
     }
+    
+    
+    /// プロフィール表示セクション
+    private var profileSection: some View {
+        VStack(alignment: .leading) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .padding([.leading, .top])
+            Text(model.name)
+                .font(.headline)
+                .padding(.leading)
+            Text(model.id)
+                .font(.subheadline)
+                .foregroundColor(Color.gray)
+                .padding(.leading)
+            Spacer(minLength: 5)
+            Text(model.bio)
+                .font(.subheadline)
+                .padding(.leading)
+        }
+    }
+    
 }
 
 
@@ -55,5 +70,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView(model: ProfileModel().fetch())
+//            .preferredColorScheme(.dark)
     }
 }
