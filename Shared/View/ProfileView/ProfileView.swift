@@ -12,6 +12,8 @@ struct ProfileView: View {
     
     var model: ProfileModel
     
+    @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -29,6 +31,13 @@ struct ProfileView: View {
             }
             Spacer()
         }
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "chevron.backward")
+                .foregroundColor(.gray)
+        })
+        .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.top)
     }
     
