@@ -24,9 +24,14 @@ struct InputChatView: View {
                 TextView(text: $viewModel.text)
                     .frame(width: screenWidth / 1.1, height: screenHeight, alignment: .leading)
                     .padding()
-                    .navigationBarItems(leading: cancelButton,
-                                        trailing: addButton
-                    )
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            cancelButton
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            addButton
+                        }
+                    }
             }
         }
     }

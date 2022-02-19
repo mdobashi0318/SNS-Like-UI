@@ -31,12 +31,16 @@ struct ProfileView: View {
             }
             Spacer()
         }
-        .navigationBarItems(leading: Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Image(systemName: "chevron.backward")
-                .foregroundColor(.gray)
-        })
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.backward")
+                        .foregroundColor(.gray)
+                }
+            }
+        }
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.top)
     }

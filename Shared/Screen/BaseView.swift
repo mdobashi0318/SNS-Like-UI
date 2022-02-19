@@ -23,11 +23,15 @@ struct BaseView: View {
                 SideMenuView(isOpen: $isOpenSideMenu, width: 270, viewModel: viewModel)
                     .edgesIgnoringSafeArea(.all)
             }
-            .navigationBarItems(leading: Button(action: {
-                self.isOpenSideMenu.toggle()
-            }) {
-                Image(systemName: "line.3.horizontal")
-            })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        self.isOpenSideMenu.toggle()
+                    }) {
+                        Image(systemName: "line.3.horizontal")
+                    }
+                }
+            }
         }
         .fullScreenCover(isPresented: $isShowModle) {
             InputChatView(profile: viewModel)
