@@ -48,10 +48,7 @@ struct SideMenuView: View {
                                 exit(0)
                             }) {
                                 Text("ログアウト")
-                                    .frame(width: 150, height: 50)
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(50 / 2)
+                                    .modifier(CornerRadiusModifier(backgroundColor: Color.blue, width: 150, height: 50))
                             }
                         }
                     }){

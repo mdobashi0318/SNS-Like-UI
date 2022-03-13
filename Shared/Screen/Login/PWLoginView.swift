@@ -24,10 +24,9 @@ struct PWLoginView: View {
                     self.viewModel.login()
                 }) {
                     Text("ログイン")
-                        .frame(width: 150, height: 50)
-                        .background(viewModel.mailaddress.isEmpty || viewModel.password.isEmpty ? Color.gray : Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(50 / 2)
+                        .modifier(CornerRadiusModifier(backgroundColor: viewModel.mailaddress.isEmpty || viewModel.password.isEmpty ? Color.gray : Color.blue,
+                                                       width: 150, height: 50)
+                        )
                 }
                 .disabled(viewModel.mailaddress.isEmpty || viewModel.password.isEmpty)
                 Spacer()

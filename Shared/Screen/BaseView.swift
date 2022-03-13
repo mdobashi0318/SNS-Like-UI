@@ -66,10 +66,7 @@ struct BaseView: View {
             isShowModle.toggle()
         }, label: {
             Image(systemName: "plus")
-                .frame(width: 50, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(50 / 2)
+                .modifier(CornerRadiusModifier(backgroundColor: Color.blue, width: 50, height: 50))
         })
             .offset(x: UIScreen.main.bounds.width / 2.7, y: UIScreen.main.bounds.height / 3.5)
     }
