@@ -44,13 +44,13 @@ struct InputChatView: View {
             }
         }) {
             Text("Add")
-                .modifier(CornerRadiusModifier(backgroundColor: viewModel.isEnableAddButton ?
+                .modifier(CornerRadiusModifier(backgroundColor: viewModel.isDisabledAddButton ?
                                                Color(UIColor.darkGray) : Color.blue,
                                                width: 60,
                                                height: 30)
                 )
         }
-        .disabled(viewModel.isEnableAddButton)
+        .disabled(viewModel.isDisabledAddButton)
     }
     
     

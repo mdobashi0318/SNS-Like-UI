@@ -12,7 +12,7 @@ class InputChatViewModel: ObservableObject {
     
     @Published var text: String = ""
     
-    @Published var isEnableAddButton = true
+    @Published var isDisabledAddButton = true
     
     private var cancelable: Set<AnyCancellable> = []
     
@@ -24,9 +24,9 @@ class InputChatViewModel: ObservableObject {
         $text
             .sink(receiveValue: { value in
                 if value.isEmpty {
-                    self.isEnableAddButton = true
+                    self.isDisabledAddButton = true
                 } else {
-                    self.isEnableAddButton = false
+                    self.isDisabledAddButton = false
                 }
             })
             .store(in: &cancelable)
