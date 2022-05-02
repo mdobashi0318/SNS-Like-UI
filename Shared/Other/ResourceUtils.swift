@@ -22,8 +22,7 @@ extension ResourceUtils where T: Codable {
             }
 
             do {
-                let json = try JSONDecoder().decode(T.self, from: data)
-                return json
+                return try JSONDecoder().decode(T.self, from: data)
             }
             catch {
                 fatalError("Couldn't parse file as \(T.self):\n\(error)")

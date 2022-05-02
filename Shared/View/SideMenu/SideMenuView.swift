@@ -33,14 +33,6 @@ struct SideMenuView: View {
                         SideMenuRow(topPadding: 125, systemName: "person", text: "Profile")
                     }
                     NavigationLink(destination: {
-                        Text("SidePage3")
-                            .onAppear {
-                                isOpen = false
-                            }
-                    }){
-                        SideMenuRow(systemName: "gear", text: "Setting")
-                    }
-                    NavigationLink(destination: {
                         VStack(alignment: .center) {
                             Text("ログアウトしてアプリを終了しますか？")
                             Button(action: {
