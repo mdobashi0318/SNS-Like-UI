@@ -11,14 +11,16 @@ class ChatModel: Codable {
     var id: String = ""
     var name: String = ""
     var detail: String = ""
+    var like: Bool = false
     
     
     init() {}
     
-    init(id: String, name: String, detail: String) {
+    init(id: String, name: String, detail: String, like: Bool) {
         self.id = id
         self.name = name
         self.detail = detail
+        self.like = like
     }
     
     

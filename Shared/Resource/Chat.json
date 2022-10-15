@@ -3,46 +3,55 @@
     {
         "id" : "id1",
         "name": "User1",
-        "detail" : "TestText1"
+        "detail" : "TestText1",
+        "like": true
     },
     {
         "id" : "id2",
         "name": "User2",
-        "detail" : "TestText2"
+        "detail" : "TestText2",
+        "like": false
     },
     {
         "id" : "id3",
         "name": "User3",
-        "detail" : "TestText3"
+        "detail" : "TestText3",
+        "like": false
     },
     {
         "id" : "id1",
         "name": "User1",
-        "detail" : "TestText4"
+        "detail" : "TestText4",
+        "like": false
     },
     {
         "id" : "id1",
         "name": "User1",
-        "detail" : "TestText5"
+        "detail" : "TestText5",
+        "like": false
     },
     {
         "id" : "id1",
         "name": "User1",
-        "detail" : "TestText6"
+        "detail" : "TestText6",
+        "like": false
     },
     {
         "id" : "id1",
         "name": "User1",
-        "detail" : "TestText7"
+        "detail" : "TestText7",
+        "like": false
     },
     {
         "id" : "id3",
         "name": "User3",
-        "detail" : "TestText8"
+        "detail" : "TestText8",
+        "like": false
     },{
         "id" : "id4",
         "name": "User4",
-        "detail" : "TestText9"
+        "detail" : "TestText9",
+        "like": false
     },
 ]
 

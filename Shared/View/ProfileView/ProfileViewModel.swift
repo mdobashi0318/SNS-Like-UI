@@ -19,7 +19,7 @@ class ProfileViewModel: ObservableObject {
     func addChat(detail: String) -> Bool {
         if detail.isEmpty { return false }
         
-        model.chat.append(ChatModel(id: model.id, name: model.name, detail: detail))
+        model.chat.append(ChatModel(id: model.id, name: model.name, detail: detail, like: false))
         objectWillChange.send()
         return true
     }

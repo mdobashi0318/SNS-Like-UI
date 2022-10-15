@@ -28,6 +28,7 @@ struct HomeListRow: View {
                 Text(model.detail)
                     .lineLimit(5)
                     .foregroundColor(Color(UIColor.textColor))
+                LikeIcon(like: model.like)
             }
         }
     }
